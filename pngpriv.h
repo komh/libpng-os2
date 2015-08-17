@@ -219,7 +219,7 @@
  * PNG_BUILD_DLL must not be set.  To avoid the code below kicking in build a
  * static library of libpng then link the DLL against that.
  */
-#ifndef PNG_BUILD_DLL
+#if !defined(PNG_BUILD_DLL) && !defined(__OS2__)
 #  ifdef DLL_EXPORT
       /* This is set by libtool when files are compiled for a DLL; libtool
        * always compiles twice, even on systems where it isn't necessary.  Set
